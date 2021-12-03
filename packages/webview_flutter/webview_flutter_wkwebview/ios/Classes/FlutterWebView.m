@@ -58,6 +58,21 @@
 
 @end
 
+@interface ZTWkProcessPool : WKProcessPool
++ (instancetype)singleWkProcessPool;
+@end
+
+@implementation ZTWkProcessPool
++ (instancetype)singleWkProcessPool{
+    static ZTWkProcessPool *staticInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        staticInstance = [[self alloc] init];
+    });
+    return staticInstance;
+}
+@end
+
 @implementation FLTWebViewController {
   FLTWKWebView* _webView;
   int64_t _viewId;
@@ -90,6 +105,7 @@
     NSDictionary<NSString*, id>* settings = args[@"settings"];
 
     WKWebViewConfiguration* configuration = [[WKWebViewConfiguration alloc] init];
+    configuration.processPool = [ZTWkProcessPool singleWkProcessPool];
     [self applyConfigurationSettings:settings toConfiguration:configuration];
     configuration.userContentController = userContentController;
     [self updateAutoMediaPlaybackPolicy:args[@"autoMediaPlaybackPolicy"]
