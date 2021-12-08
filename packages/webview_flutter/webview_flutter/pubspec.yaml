@@ -3,7 +3,7 @@ description: A Flutter plugin that provides a WebView widget on Android and iOS.
 repository: https://github.com/hellohejinyu/plugins/tree/master/packages/webview_flutter/webview_flutter
 issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+webview%22
 publish_to: none
-version: 2.3.1
+version: 3.0.0
 
 environment:
   sdk: ">=2.14.0 <3.0.0"
@@ -20,8 +20,8 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  webview_flutter_android: ^2.3.1
-  webview_flutter_platform_interface: ^1.5.2
+  webview_flutter_android: ^2.8.0
+  webview_flutter_platform_interface: ^1.8.0
   webview_flutter_wkwebview:
     git:
       url: git@github.com:hellohejinyu/plugins.git
