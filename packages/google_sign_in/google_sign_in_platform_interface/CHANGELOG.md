@@ -1,3 +1,11 @@
+## 2.1.2
+
+* Internal code cleanup for stricter analysis options.
+
+## 2.1.1
+
+* Removes dependency on `meta`.
+
 ## 2.1.0
 
 * Add serverAuthCode attribute to user data

@@ -5,9 +5,9 @@
 import 'dart:async';
 
 import 'package:cross_file/cross_file.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:image_picker_platform_interface/src/method_channel/method_channel_image_picker.dart';
 import 'package:image_picker_platform_interface/src/types/types.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 /// The interface that implementations of image_picker must implement.
 ///
@@ -34,7 +34,7 @@ abstract class ImagePickerPlatform extends PlatformInterface {
   // TODO(amirh): Extract common platform interface logic.
   // https://github.com/flutter/flutter/issues/43368
   static set instance(ImagePickerPlatform instance) {
-    PlatformInterface.verifyToken(instance, _token);
+    PlatformInterface.verify(instance, _token);
     _instance = instance;
   }
 

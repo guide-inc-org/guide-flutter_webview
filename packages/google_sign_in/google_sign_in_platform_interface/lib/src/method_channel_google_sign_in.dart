@@ -4,8 +4,8 @@
 
 import 'dart:async';
 
+import 'package:flutter/foundation.dart' show visibleForTesting;
 import 'package:flutter/services.dart';
-import 'package:meta/meta.dart' show visibleForTesting;
 
 import '../google_sign_in_platform_interface.dart';
 import 'types.dart';
@@ -55,7 +55,7 @@ class MethodChannelGoogleSignIn extends GoogleSignInPlatform {
         .invokeMapMethod<String, dynamic>('getTokens', <String, dynamic>{
       'email': email,
       'shouldRecoverAuth': shouldRecoverAuth,
-    }).then((result) => getTokenDataFromMap(result!));
+    }).then((Map<String, dynamic>? result) => getTokenDataFromMap(result!));
   }
 
   @override

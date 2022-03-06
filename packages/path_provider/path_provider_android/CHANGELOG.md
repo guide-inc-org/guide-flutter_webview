@@ -1,3 +1,18 @@
+## 2.0.12
+
+* Returns to using a different platform channel name, undoing the revert in
+  2.0.11, but updates the minimum Flutter version to 2.8 to avoid the issue
+  that caused the revert.
+
+## 2.0.11
+
+* Temporarily reverts the platform channel name change from 2.0.10 in order to
+  restore compatibility with Flutter versions earlier than 2.8.
+
+## 2.0.10
+
+* Switches to a package-internal implementation of the platform interface.
+
 ## 2.0.9
 
 * Updates Android compileSdkVersion to 31.

@@ -1,4 +1,4 @@
-## NEXT
+## 0.8.0
 
 - Ensures that `firebase-test-lab` runs include an `integration_test` runner.
 - Adds a `make-deps-path-based` command to convert inter-repo package
@@ -10,11 +10,15 @@
   `--packages=path_provide_ios` now works.
 - `--run-on-changed-packages` now includes only the changed packages in a
   federated plugin, not all packages in that plugin.
-- Fix `federation-safety-check` handling of plugin deletion, and of top-level
+- Fixes `federation-safety-check` handling of plugin deletion, and of top-level
   files in unfederated plugins whose names match federated plugin heuristics
   (e.g., `packages/foo/foo_android.iml`).
-- Add an auto-retry for failed Firebase Test Lab tests as a short-term patch
+- Adds an auto-retry for failed Firebase Test Lab tests as a short-term patch
   for flake issues.
+- Adds support for `CHROME_EXECUTABLE` in `drive-examples` to match similar
+  `flutter` behavior.
+- Validates `default_package` entries in plugins.
+- Removes `allow-warnings` from the `podspecs` command.
 
 ## 0.7.3
 
