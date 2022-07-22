@@ -18,6 +18,7 @@
               instanceManager:(FWFInstanceManager *)instanceManager {
   self = [self initWithFrame:frame configuration:configuration];
   if (self) {
+    self.scrollView.bounces = NO;
     _objectApi = [[FWFObjectFlutterApiImpl alloc] initWithBinaryMessenger:binaryMessenger
                                                           instanceManager:instanceManager];
     if (@available(iOS 11.0, *)) {

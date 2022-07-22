@@ -20,14 +20,10 @@ dependencies:
   flutter:
     sdk: flutter
   webview_flutter_android:
-    git:
-      url: git@github.com:hellohejinyu/plugins.git
-      path: packages/webview_flutter/webview_flutter_android
-  webview_flutter_platform_interface: ^1.8.0
+    path: '../webview_flutter_android'
+  webview_flutter_platform_interface: ^1.9.1
   webview_flutter_wkwebview:
-    git:
-      url: git@github.com:hellohejinyu/plugins.git
-      path: packages/webview_flutter/webview_flutter_wkwebview
+    path: '../webview_flutter_wkwebview'
 
 dev_dependencies:
   build_runner: ^2.1.5
