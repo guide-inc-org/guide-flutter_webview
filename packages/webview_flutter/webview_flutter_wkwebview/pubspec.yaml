@@ -21,7 +21,7 @@ dependencies:
   path: ^1.8.0
   webview_flutter_platform_interface: 
     git:
-      url: git@github.com:hellohejinyu/plugins.git
+      url: https://github.com/guide-flutter/webview_flutter.git
       path: packages/webview_flutter/webview_flutter_platform_interface
 
 dev_dependencies:
