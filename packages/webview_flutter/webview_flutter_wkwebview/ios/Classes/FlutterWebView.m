@@ -52,6 +52,30 @@
   // webview's contentInsets.
   // self.scrollView.contentInset = UIEdgeInsetsZero;
   if (@available(iOS 11, *)) {
+      UIView *webScrollView = nil;
+      for (UIView *subview in self.subviews) {
+        if ([subview isKindOfClass:[UIScrollView class]]) {
+          webScrollView = subview;
+          break;
+        }
+      }
+      if (webScrollView) {
+        UIView *contentView = nil;
+        for (UIView *subview in webScrollView.subviews) {
+          if ([subview.interactions count] > 1) {
+            contentView = subview;
+            break;
+          }
+        }
+        if (contentView) {
+          for (id<UIInteraction> interaction in contentView.interactions) {
+            if ([interaction isKindOfClass:[UIDragInteraction class]]) {
+              ((UIDragInteraction *) interaction).enabled = NO;
+              break;
+            }
+          }
+        }
+      }
     // Above iOS 11, adjust contentInset to compensate the adjustedContentInset so the sum will
     // always be 0.
     if (UIEdgeInsetsEqualToEdgeInsets(self.scrollView.adjustedContentInset, UIEdgeInsetsZero)) {
