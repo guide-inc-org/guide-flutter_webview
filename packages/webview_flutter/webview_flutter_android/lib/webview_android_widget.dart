@@ -118,7 +118,7 @@ class WebViewAndroidPlatformController extends WebViewPlatformController {
 
     webView.settings.setDomStorageEnabled(true);
     webView.settings.setJavaScriptCanOpenWindowsAutomatically(true);
-    webView.settings.setSupportMultipleWindows(true);
+    webView.settings.setSupportMultipleWindows(false);
     webView.settings.setLoadWithOverviewMode(true);
     webView.settings.setUseWideViewPort(true);
     webView.settings.setDisplayZoomControls(false);
