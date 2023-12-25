@@ -24,6 +24,14 @@ import 'webview_android_widget.dart';
 /// 10. See https://github.com/flutter/flutter/wiki/Hybrid-Composition for more
 /// information.
 class SurfaceAndroidWebView extends AndroidWebView {
+  ///
+  SurfaceAndroidWebView({
+    this.useHybridComposition = false,
+  });
+
+  /// initExpensiveAndroidView
+  final bool useHybridComposition;
+
   @override
   Widget build({
     required BuildContext context,
@@ -53,7 +61,11 @@ class SurfaceAndroidWebView extends AndroidWebView {
             );
           },
           onCreatePlatformView: (PlatformViewCreationParams params) {
-            return PlatformViewsService.initSurfaceAndroidView(
+            // ignore: always_specify_types
+            final  androidView = useHybridComposition
+                ? PlatformViewsService.initExpensiveAndroidView
+                : PlatformViewsService.initSurfaceAndroidView;
+            return androidView(
               id: params.id,
               viewType: 'plugins.flutter.io/webview',
               // WebView content is not affected by the Android view's layout direction,
